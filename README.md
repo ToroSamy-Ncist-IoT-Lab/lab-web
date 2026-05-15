@@ -38,6 +38,3 @@ description: 简短摘要（可选）
 
 4. 推送分支并发起 **Pull Request**，维护者 Review 通过后合并，站点重新部署即可上线。
 
-## 与 involutionhell 的关系
-
-技术选型对齐：Next.js App Router + TypeScript + Tailwind。本仓库刻意保持轻量，便于实验室自行迭代；需要 MDX、国际化、搜索等能力时可再逐步引入。
