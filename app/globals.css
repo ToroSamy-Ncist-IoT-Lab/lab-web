@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: var(--font-sans-stack);
+  --font-mono: var(--font-mono-stack);
+
+  --color-lab-bg: #f5f5f7;
+  --color-lab-surface: rgba(255, 255, 255, 0.72);
+  --color-lab-ink: #1d1d1f;
+  --color-lab-muted: #6e6e73;
+  --color-lab-accent: #0071e3;
+  --color-lab-accent-soft: #e8f1ff;
+  --color-lab-terminal: #00c853;
+  --color-lab-border: rgba(0, 0, 0, 0.08);
+  --color-lab-grid: rgba(0, 0, 0, 0.04);
+}
+
+:root {
+  --font-sans-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono-stack: "SF Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+    Monaco, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans-stack);
+  background-color: var(--color-lab-bg);
+  color: var(--color-lab-ink);
+  min-height: 100vh;
+}
+
+.lab-grid-bg {
+  background-image: linear-gradient(var(--color-lab-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-lab-grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.lab-glass {
+  background: var(--color-lab-surface);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--color-lab-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.lab-chip {
+  font-family: var(--font-mono-stack);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.lab-prose {
+  @apply prose prose-neutral max-w-none prose-headings:font-semibold prose-a:text-[#0071e3];
+}
+
+.lab-prose code {
+  font-family: var(--font-mono-stack);
+  font-size: 0.875em;
+}
+
+.lab-prose pre {
+  font-family: var(--font-mono-stack);
+  border-radius: 12px;
+  border: 1px solid var(--color-lab-border);
+  background: #0d0d0f !important;
+  color: #f5f5f7;
+}
